@@ -1,13 +1,6 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
-import {
-  addDoc,
-  collection,
-  serverTimestamp,
-  onSnapshot,
-  orderBy,
-  query,
-} from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { ref, uploadString, getDownloadURL } from "@firebase/storage";
 import { v4 } from "uuid";
 
@@ -20,7 +13,7 @@ const NweetFactory = ({ userObj, fileInput }) => {
   };
   const onSubmit = async (event) => {
     event.preventDefault();
-    const fileRef = ref(storageService, `${userObj.uid}/${v4()}`);
+    ref(storageService, `${userObj.uid}/${v4()}`);
     let attachmentUrl = "";
     if (attachment !== "") {
       const attachmentRef = ref(storageService, `${userObj.uid}/${v4()}`);

@@ -1,16 +1,7 @@
-import { dbService, storageService } from "fbase";
+import { dbService } from "fbase";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  addDoc,
-  collection,
-  serverTimestamp,
-  onSnapshot,
-  orderBy,
-  query,
-} from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import Nweet from "components/Nweet";
-import { ref, uploadString, getDownloadURL } from "@firebase/storage";
-import { v4 } from "uuid";
 import NweetFactory from "components/NweetFactory";
 
 const Home = ({ userObj }) => {
